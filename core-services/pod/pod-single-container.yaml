@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: <Pod Name>
+  namespace: <Namespace>
+spec:
+  container:
+    - name: <Container Name>
+      image: <Image Name>
+      resources:
+        limits:
+          memory: "200Mi"
+        requests:
+          memory: "100Mi"
+      ports:
+        - name: web-port
+          protocol: TCP
+          containerPort: <Port number>
+          Port: <Number>
+          nodePort: <Node Port>
