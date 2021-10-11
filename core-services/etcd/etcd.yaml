@@ -1,0 +1,13 @@
+# Operate ETCD
+./etcd
+# Set key
+./etcdctl set <Key> <Value>
+
+# Get key
+./etcdctl get <Key name>
+
+# Get an introduction about ETCD
+./etcdctl
+
+# Get all keya and values
+kubectl exec etcd-master -n kube-system etcdctl get / --prefix -keys-only

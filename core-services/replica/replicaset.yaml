@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: <RS name>
+  namespace: <Namespace name>
+  labels:
+    app: <RS app name>
+    type: <RS app type>
+spec:
+  template:
+    metadata:
+      name: <Pod name>
+      labels:
+        app: <Pod app name>
+        type: <Pod app type>
+    spec:
+      containers:
+        - name: nginx 
+          image: nginx 
+        - name: redis
+          image: redis
+    replicas: <RS number>
+    selector:
+      matchLabels:
+        type: <Pod app type>
