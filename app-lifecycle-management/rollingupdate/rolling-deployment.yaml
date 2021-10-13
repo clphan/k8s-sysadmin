@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uat-app-deployment
+  labels:
+    teir: web
+    env: uat
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: web
+      anv: uat
+  containers:
+    - name: uat-app-pod-nginx
+      image: nginx:1.70

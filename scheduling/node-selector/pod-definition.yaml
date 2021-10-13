@@ -5,6 +5,13 @@ metadata:
 spec:
   containers:
     - name: nginx 
-      image: nginx 
+      image: nginx
+      resources:
+        requests:
+          memory: "1Gi"
+          cpu: 1
+        limits:
+          memory: "2Gi"
+          cpu: 2
   nodeSelector:
     size: Large

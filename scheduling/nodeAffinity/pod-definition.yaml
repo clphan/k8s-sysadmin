@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <Deployment name>]
+spec:
+  replicas: <Number of replicas>
+  selector:
+    matchLabels:
+      <Key>:<Value>
+  template:
+    metadata:
+      labels:
+        <Key>:<Value>
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: <Key name>
+                    operator: In/Exists/NotEquals
+                    value: <Value name>
+                    
