@@ -1,0 +1,28 @@
+apiVersion:
+kind: Config
+
+clusters:
+  - name:
+    cluster:
+      certificate-authority:
+      server:
+
+contexts:
+  - name: 
+    context:
+      user:
+      cluster:
+      namespace:
+
+users:
+  - name:
+    user:
+      client-certificate:
+      client-key:
+
+
+kubectl config --kubeconfig=path-to-the-config-file \
+  use-context <context-name>
+
+kubectl config --kubeconfig=path-to-the-config-file \
+  current-context <context-name>

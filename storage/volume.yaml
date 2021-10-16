@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-proxy
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - mountPath: /app-log
+          name: app-log
+  
+  volumes:
+    - name: app-log
+      path: /data
