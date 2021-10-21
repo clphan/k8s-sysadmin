@@ -1,0 +1,19 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: cluster-101
+  region: ap-southeast-1
+
+nodeGroups:
+  - name: ng-worker-001
+    # labels: {role: workers}
+    instanceType: t2.micro
+    desiredCapacity: 2
+    volumeSize: 30
+    privateNetworking: false
+    ssh: 
+      publicKeyName: clphan295-sing
+    # subnets:
+    #   - subnet-0bf434446a49496c7 # subnet-id01
+    #   - subnet-009198aef5b591e73 # subnet-id02
